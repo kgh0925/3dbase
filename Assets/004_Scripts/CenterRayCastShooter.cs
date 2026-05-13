@@ -22,14 +22,14 @@ public class CenterRayCastShooter : MonoBehaviour
 
         if (m_cam == null) m_cam = Camera.main;
     }
-    private void OnEnable()
+/*    private void OnEnable()
     {
         _fire.performed += OnRayFire;
     }
     private void OnDisable()
     {
         _fire.performed -= OnRayFire;
-    }
+    }*/
     private void Update()
     {
         Ray_Interact();
@@ -62,7 +62,7 @@ public class CenterRayCastShooter : MonoBehaviour
             
 
             IInteractable interactable = hit.collider.GetComponent<IInteractable>();
-            Debug.DrawLine(_ray.origin, hit.point, Color.green);
+            //Debug.DrawLine(_ray.origin, hit.point, Color.green);
             if (interactable != null && !IsFind)
             {
                 interactable.Descrption();
@@ -71,7 +71,7 @@ public class CenterRayCastShooter : MonoBehaviour
         }
         else
         {
-            Debug.DrawLine(_ray.origin, _ray.origin + _ray.direction * m_maxDistan, Color.yellow);
+            //Debug.DrawLine(_ray.origin, _ray.origin + _ray.direction * m_maxDistan, Color.yellow);
             if (IsFind)
             {
                 IsFind = false;
